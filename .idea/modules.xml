@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/showcase.iml" filepath="$PROJECT_DIR$/showcase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-common/showcase-common.iml" filepath="$PROJECT_DIR$/showcase-common/showcase-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-common/showcase-common.iml" filepath="$PROJECT_DIR$/showcase-common/showcase-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-core/showcase-core.iml" filepath="$PROJECT_DIR$/showcase-core/showcase-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-core/showcase-core.iml" filepath="$PROJECT_DIR$/showcase-core/showcase-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-entity/showcase-entity.iml" filepath="$PROJECT_DIR$/showcase-entity/showcase-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-entity/showcase-entity.iml" filepath="$PROJECT_DIR$/showcase-entity/showcase-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-parent/showcase-parent.iml" filepath="$PROJECT_DIR$/showcase-parent/showcase-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-parent/showcase-parent.iml" filepath="$PROJECT_DIR$/showcase-parent/showcase-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-service/showcase-service.iml" filepath="$PROJECT_DIR$/showcase-service/showcase-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-service/showcase-service.iml" filepath="$PROJECT_DIR$/showcase-service/showcase-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-service-api/showcase-service-api.iml" filepath="$PROJECT_DIR$/showcase-service-api/showcase-service-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-service-api/showcase-service-api.iml" filepath="$PROJECT_DIR$/showcase-service-api/showcase-service-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-web/showcase-web.iml" filepath="$PROJECT_DIR$/showcase-web/showcase-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showcase-web/showcase-web.iml" filepath="$PROJECT_DIR$/showcase-web/showcase-web.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,17 +1,7 @@
 package samlen.tsoi.showcase.service.dao;
 
 import samlen.tsoi.showcase.entity.User;
+import tk.mybatis.mapper.common.Mapper;
 
-public interface UserMapper {
-    int deleteByPrimaryKey(Long id);
-
-    int insert(User record);
-
-    int insertSelective(User record);
-
-    User selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(User record);
-
-    int updateByPrimaryKey(User record);
+public interface UserMapper extends Mapper<User> {
 }

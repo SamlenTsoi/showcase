@@ -56,6 +56,16 @@
             <groupId>samlen.tsoi</groupId>
             <artifactId>showcase-entity</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-autoconfigure</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -79,12 +89,17 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.35</version>
+                        <version>${mysql.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>samlen.tsoi</groupId>
                         <artifactId>showcase-core</artifactId>
-                        <version>1.0-SNAPSHOT</version>
+                        <version>${project.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>tk.mybatis</groupId>
+                        <artifactId>mapper</artifactId>
+                        <version>${tk.mybatis.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>

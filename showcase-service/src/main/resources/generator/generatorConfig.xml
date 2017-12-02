@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <properties url="${mybatis.generator.generatorConfig.properties}"/>
-    <context id="Mysql"  targetRuntime="MyBatis3" defaultModelType="flat">
+    <context id="Mysql"  targetRuntime="MyBatis3Simple" defaultModelType="flat">
         <!-- 如果为mysql的关键字，设置为true会加上分隔符，`关键字` -->
         <property name="autoDelimitKeywords" value="true"/>
         <!-- 设置分隔符，mysql的分隔符为反单引号（`） -->
@@ -12,7 +12,10 @@
         <property name="endingDelimiter" value="`"/>
         <!-- 插件设置 -->
         <plugin type="samlen.tsoi.showcase.core.mybatis.plugin.LombokPlugin"/>
-        <commentGenerator type="samlen.tsoi.showcase.core.mybatis.plugin.EntityCommentGenerator">
+        <plugin type="${mapper.plugin}">
+            <property name="mappers" value="${mapper.Mapper}"/>
+        </plugin>
+        <commentGenerator>
             <!--<property name="javaFileEncoding" value="UTF-8"/>-->
             <!-- 是否去除注释的时间戳 -->
             <!--<property name="suppressDate" value="true"/>-->
@@ -40,6 +43,8 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
-        <table tableName="${table.name}" domainObjectName="${entity.name}" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="${table.name}">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
     </context>
 </generatorConfiguration>

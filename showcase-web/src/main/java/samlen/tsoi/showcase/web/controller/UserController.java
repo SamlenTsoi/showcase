@@ -1,12 +1,11 @@
 package samlen.tsoi.showcase.web.controller;
 
+import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import samlen.tsoi.showcase.entity.User;
+import samlen.tsoi.showcase.service.UserReadService;
 import samlen.tsoi.showcase.service.UserWriteService;
 
 /**
@@ -21,8 +20,17 @@ public class UserController {
     @Autowired
     private UserWriteService userWriteService;
 
+    @Autowired
+    private UserReadService userReadService;
+
     @PostMapping("add")
     public void create(@RequestBody User user) {
         userWriteService.insertOne(user);
+    }
+
+    @GetMapping("page")
+    public PageInfo<User> page(@RequestParam("pageNo") Integer pageNo,
+                               @RequestParam("pageSize") Integer pageSize) {
+        return userReadService.page(pageNo, pageSize);
     }
 }

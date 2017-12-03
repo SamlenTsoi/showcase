@@ -23,11 +23,21 @@ public class UserController {
     @Autowired
     private UserReadService userReadService;
 
+    /**
+     * 创建
+     * @param user
+     */
     @PostMapping("add")
     public void create(@RequestBody User user) {
         userWriteService.insertOne(user);
     }
 
+    /**
+     * 分页查询
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
     @GetMapping("page")
     public PageInfo<User> page(@RequestParam("pageNo") Integer pageNo,
                                @RequestParam("pageSize") Integer pageSize) {

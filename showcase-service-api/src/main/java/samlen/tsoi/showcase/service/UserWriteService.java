@@ -8,5 +8,9 @@ import samlen.tsoi.showcase.entity.User;
  */
 public interface UserWriteService {
 
+    /**
+     * 创建
+     * @param user
+     */
     void insertOne(User user);
 }

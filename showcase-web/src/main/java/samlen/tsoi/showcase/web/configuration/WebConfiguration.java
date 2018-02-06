@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  */
 @EnableWebMvc
 @Configuration
-@ComponentScan({"samlen.tsoi"})
+@ComponentScan("samlen.tsoi.showcase.*")
 @MapperScan("samlen.tsoi.showcase.service.dao")
 public class WebConfiguration {
 }

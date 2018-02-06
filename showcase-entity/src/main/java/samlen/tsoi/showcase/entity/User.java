@@ -8,6 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
+/**
+ * 用户信息po
+ *
+ * @author samlen_tsoi
+ * @date 2018/1/25
+ */
 @Data
 public class User {
     @Id

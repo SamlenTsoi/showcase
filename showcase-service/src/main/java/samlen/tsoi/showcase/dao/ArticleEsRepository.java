@@ -1,4 +1,4 @@
-package samlen.tsoi.showcase.service.dao;
+package samlen.tsoi.showcase.dao;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;

@@ -11,7 +11,6 @@
     <module>showcase-common</module>
     <module>showcase-core</module>
     <module>showcase-entity</module>
-    <module>showcase-service-api</module>
     <module>showcase-service</module>
     <module>showcase-web</module>
   </modules>

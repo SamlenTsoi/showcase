@@ -12,9 +12,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Service;
+import samlen.tsoi.showcase.dao.ArticleEsRepository;
 import samlen.tsoi.showcase.entity.ArticleEs;
 import samlen.tsoi.showcase.service.ArticleEsService;
-import samlen.tsoi.showcase.service.dao.ArticleEsRepository;
 
 
 /**
@@ -32,8 +32,7 @@ public class ArticleEsServiceImpl implements ArticleEsService {
 
     @Override
     public void save(ArticleEs articleEs) {
-        ArticleEs save = articleEsRepository.save(articleEs);
-        log.info(save.toString());
+        articleEsRepository.save(articleEs);
     }
 
     @Override

@@ -2,9 +2,9 @@ package samlen.tsoi.showcase.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import samlen.tsoi.showcase.dao.UserMapper;
 import samlen.tsoi.showcase.entity.User;
 import samlen.tsoi.showcase.service.UserWriteService;
-import samlen.tsoi.showcase.service.dao.UserMapper;
 
 /**
  * @author samlen_tsoi

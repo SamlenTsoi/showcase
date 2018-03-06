@@ -4,9 +4,9 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import samlen.tsoi.showcase.dao.UserMapper;
 import samlen.tsoi.showcase.entity.User;
 import samlen.tsoi.showcase.service.UserReadService;
-import samlen.tsoi.showcase.service.dao.UserMapper;
 
 /**
  * @author samlen_tsoi

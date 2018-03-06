@@ -1,4 +1,4 @@
-package samlen.tsoi.showcase.service.dao;
+package samlen.tsoi.showcase.dao;
 
 import samlen.tsoi.showcase.entity.User;
 import tk.mybatis.mapper.common.Mapper;

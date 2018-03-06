@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc
 @Configuration
 @ComponentScan("samlen.tsoi.showcase")
-@MapperScan("samlen.tsoi.showcase.service.dao")
-@EnableElasticsearchRepositories("samlen.tsoi.showcase.service.dao")
+@MapperScan("samlen.tsoi.showcase.dao")
+@EnableElasticsearchRepositories("samlen.tsoi.showcase.dao")
 public class WebConfiguration {
 }

@@ -10,22 +10,20 @@
 ### 添加依赖
 ```XML
 <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+    <optional>true</optional>
 </dependency>
-
-
 <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <fork>true</fork>
                 </configuration>
-            </plugin>
-        </plugins>
+        </plugin>
+    </plugins>
 </build>
 ```
 

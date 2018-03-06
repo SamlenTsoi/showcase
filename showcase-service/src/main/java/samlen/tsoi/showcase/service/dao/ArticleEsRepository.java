@@ -1,8 +1,8 @@
-package samlen.tsoi.showcase.web.dao;
+package samlen.tsoi.showcase.service.dao;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
-import samlen.tsoi.showcase.web.entity.ArticleEs;
+import samlen.tsoi.showcase.entity.ArticleEs;
 
 /**
  * @author samlen_tsoi

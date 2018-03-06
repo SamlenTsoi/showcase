@@ -34,13 +34,13 @@ public class UserController {
 
     /**
      * 分页查询
-     * @param pageNo
+     * @param pageNum
      * @param pageSize
      * @return
      */
     @GetMapping("page")
-    public PageInfo<User> page(@RequestParam("pageNo") Integer pageNo,
+    public PageInfo<User> page(@RequestParam("pageNum") Integer pageNum,
                                @RequestParam("pageSize") Integer pageSize) {
-        return userReadService.page(pageNo, pageSize);
+        return userReadService.page(pageNum, pageSize);
     }
 }

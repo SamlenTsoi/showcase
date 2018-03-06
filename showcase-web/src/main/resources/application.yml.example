@@ -4,6 +4,13 @@ server:
 
 # spring相关配置
 spring:
+    data:
+      # es配置
+      elasticsearch:
+        cluster-nodes: localhost:9300
+        cluster-name:
+        repositories:
+          enabled: true
     datasource:
         name: test
         url: jdbc:mysql://127.0.0.1:3306/showcase

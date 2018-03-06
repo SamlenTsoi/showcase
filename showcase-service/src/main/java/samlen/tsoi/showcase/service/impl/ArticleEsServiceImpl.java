@@ -1,4 +1,4 @@
-package samlen.tsoi.showcase.web.service.impl;
+package samlen.tsoi.showcase.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.index.query.BoolQueryBuilder;
@@ -12,9 +12,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Service;
-import samlen.tsoi.showcase.web.dao.ArticleEsRepository;
-import samlen.tsoi.showcase.web.entity.ArticleEs;
-import samlen.tsoi.showcase.web.service.ArticleEsService;
+import samlen.tsoi.showcase.entity.ArticleEs;
+import samlen.tsoi.showcase.service.ArticleEsService;
+import samlen.tsoi.showcase.service.dao.ArticleEsRepository;
+
 
 /**
  * es文章写Service实现

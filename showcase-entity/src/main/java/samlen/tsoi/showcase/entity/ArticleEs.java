@@ -1,4 +1,4 @@
-package samlen.tsoi.showcase.web.entity;
+package samlen.tsoi.showcase.entity;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

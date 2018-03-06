@@ -13,7 +13,7 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Service;
 import samlen.tsoi.showcase.dao.ArticleEsRepository;
-import samlen.tsoi.showcase.entity.ArticleEs;
+import samlen.tsoi.showcase.entity.po.ArticleEs;
 import samlen.tsoi.showcase.service.ArticleEsService;
 
 

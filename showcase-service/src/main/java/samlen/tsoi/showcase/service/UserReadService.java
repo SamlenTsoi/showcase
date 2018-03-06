@@ -1,7 +1,7 @@
 package samlen.tsoi.showcase.service;
 
 import com.github.pagehelper.PageInfo;
-import samlen.tsoi.showcase.entity.User;
+import samlen.tsoi.showcase.entity.po.User;
 
 /**
  * @author samlen_tsoi

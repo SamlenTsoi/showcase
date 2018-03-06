@@ -1,7 +1,7 @@
 package samlen.tsoi.showcase.service;
 
 import org.springframework.data.domain.Page;
-import samlen.tsoi.showcase.entity.ArticleEs;
+import samlen.tsoi.showcase.entity.po.ArticleEs;
 
 /**
  * es文章写Service

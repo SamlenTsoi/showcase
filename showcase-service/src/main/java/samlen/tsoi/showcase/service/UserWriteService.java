@@ -1,6 +1,6 @@
 package samlen.tsoi.showcase.service;
 
-import samlen.tsoi.showcase.entity.User;
+import samlen.tsoi.showcase.entity.po.User;
 
 /**
  * @author samlen_tsoi

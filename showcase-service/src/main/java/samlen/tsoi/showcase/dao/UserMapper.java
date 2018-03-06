@@ -1,6 +1,6 @@
 package samlen.tsoi.showcase.dao;
 
-import samlen.tsoi.showcase.entity.User;
+import samlen.tsoi.showcase.entity.po.User;
 import tk.mybatis.mapper.common.Mapper;
 
 /**

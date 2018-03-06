@@ -1,7 +1,7 @@
 package samlen.tsoi.showcase.dao;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
-import samlen.tsoi.showcase.entity.ArticleEs;
+import samlen.tsoi.showcase.entity.po.ArticleEs;
 
 /**
  * @author samlen_tsoi

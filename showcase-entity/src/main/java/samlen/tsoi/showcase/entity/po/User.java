@@ -1,4 +1,4 @@
-package samlen.tsoi.showcase.entity;
+package samlen.tsoi.showcase.entity.po;
 
 import lombok.Data;
 

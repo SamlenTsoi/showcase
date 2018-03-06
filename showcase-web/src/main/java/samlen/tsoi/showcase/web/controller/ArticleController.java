@@ -1,5 +1,6 @@
 package samlen.tsoi.showcase.web.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.List;
  * @author samlen_tsoi
  * @date 2018/2/5
  */
+@Slf4j
 @RestController
 @RequestMapping("article")
 public class ArticleController {
@@ -29,6 +31,7 @@ public class ArticleController {
     @GetMapping("get")
     public Result get(@RequestParam("id") Long id) {
         ArticleEs articleEs = articleEsService.get(id);
+        log.info("---" + articleEs.toString() + "---");
         return Result.ok(articleEs);
     }
 

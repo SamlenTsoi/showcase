@@ -26,6 +26,7 @@
         <persistence-api.version>1.0</persistence-api.version>
         <spring-boot.version>1.5.8.RELEASE</spring-boot.version>
         <pagehelper.auto.version>1.2.3</pagehelper.auto.version>
+        <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
         <org.projectlombok.verson>1.16.18</org.projectlombok.verson>
         <tk.mybatis.mapper.version>3.4.2</tk.mybatis.mapper.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -187,8 +188,15 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <excludes>
+                        <exclude> **/application.yml/**</exclude>
+                        <exclude> **/application.yml.example/**</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>

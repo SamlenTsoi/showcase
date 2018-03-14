@@ -8,9 +8,10 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * 日期工具类, 继承org.apache.commons.lang.time.DateUtils类
- * @author wqj
- * @version 2015-12-10
+ * Date工具类
+ *
+ * @author samlen_tsoi
+ * @date 2018/3/6
  */
 public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
 	

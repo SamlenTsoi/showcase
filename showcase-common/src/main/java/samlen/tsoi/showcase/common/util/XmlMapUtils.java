@@ -11,8 +11,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Xml与Map互转工具
- * Created by samlen_tsoi on 2017/9/27.
+ * xml转map工具类
+ *
+ * @author samlen_tsoi
+ * @date 2018/3/6
  */
 public class XmlMapUtils {
 

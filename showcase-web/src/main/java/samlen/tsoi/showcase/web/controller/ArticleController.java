@@ -22,12 +22,24 @@ public class ArticleController {
     @Autowired
     private ArticleEsService articleEsService;
 
+    /**
+     * 保存
+     *
+     * @param articleEs
+     * @return
+     */
     @PostMapping("save")
     public Result save(@RequestBody ArticleEs articleEs) {
         articleEsService.save(articleEs);
         return Result.ok();
     }
 
+    /**
+     * 获取
+     *
+     * @param id
+     * @return
+     */
     @GetMapping("get")
     public Result get(@RequestParam("id") Long id) {
         ArticleEs articleEs = articleEsService.get(id);
@@ -35,6 +47,13 @@ public class ArticleController {
         return Result.ok(articleEs);
     }
 
+    /**
+     * 搜索
+     *
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
     @GetMapping("search")
     public List<ArticleEs> search(@RequestParam("pageNum") Integer pageNum,
                                   @RequestParam("pageSize") Integer pageSize) {

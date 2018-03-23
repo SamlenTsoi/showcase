@@ -25,6 +25,13 @@ public class KafkaController {
     @Autowired
     private KafkaTemplate kafkaTemplate;
 
+    /**
+     * 同步到kafka
+     *
+     * @param topic 主题
+     * @param mes 消息内容
+     * @return
+     */
     @GetMapping("syncKafka")
     public Result syncKafka(@RequestParam("topic") String topic,
                             @RequestParam("mes") String mes) {
@@ -32,6 +39,11 @@ public class KafkaController {
         return Result.ok();
     }
 
+    /**
+     * 这里使用正则匹配topic，其中【*】之前得加上【.】才能匹配到。
+     *
+     * @param record
+     */
     @KafkaListener(topicPattern = "showcase.*")
     public void listen(ConsumerRecord<String, String> record) {
         Optional<String> kafkaMessage = Optional.ofNullable(record.value());

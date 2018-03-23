@@ -45,11 +45,23 @@ public class KafkaController {
      * @param record
      */
     @KafkaListener(topicPattern = "showcase.*")
-    public void listen(ConsumerRecord<String, String> record) {
+    public void listenPattern(ConsumerRecord<String, String> record) {
         Optional<String> kafkaMessage = Optional.ofNullable(record.value());
         if (kafkaMessage.isPresent()) {
             log.info("topic : {}, mes : {}", record.topic(), kafkaMessage.get());
         }
     }
 
+    /**
+     * 指定单个topic
+     *
+     * @param record
+     */
+    @KafkaListener(topicPattern = "show-web")
+    public void listenOne(ConsumerRecord<String, String> record) {
+        Optional<String> kafkaMessage = Optional.ofNullable(record.value());
+        if (kafkaMessage.isPresent()) {
+            log.info("topic : {}, mes : {}", record.topic(), kafkaMessage.get());
+        }
+    }
 }

@@ -16,5 +16,6 @@
         <module>showcase-web</module>
         <module>showcase-mqtt</module>
         <module>showcase-quartz</module>
+        <module>showcase-websocket</module>
     </modules>
 </project>

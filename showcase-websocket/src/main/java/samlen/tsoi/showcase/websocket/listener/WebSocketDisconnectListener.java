@@ -12,8 +12,8 @@ import samlen.tsoi.showcase.redis.service.RedisService;
 /**
  * Websocket断开连接监听器
  *
- * @author wxw
- * @date 2017-12-29 16:15
+ * @author samlen_tsoi
+ * @date 2018/4/26
  */
 @Slf4j
 @Component
@@ -21,8 +21,6 @@ public class WebSocketDisconnectListener implements ApplicationListener<SessionD
 
     @Autowired
     private RedisService redisService;
-
-    private final String USER_ID = "userId";
 
     @Override
     public void onApplicationEvent(SessionDisconnectEvent event) {

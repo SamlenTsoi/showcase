@@ -54,7 +54,6 @@ public class WebSocketConfiguration extends AbstractWebSocketMessageBrokerConfig
          registry.setUserDestinationPrefix("/showcase/ws");
     }
 
-
     /**
      * WebSocket 连接
      *

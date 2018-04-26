@@ -33,8 +33,9 @@ public class WebsocketConnectListener implements ApplicationListener<SessionConn
         String userId = sha.getFirstNativeHeader(USER_ID);
         //获取SessionId
         String sessionId = sha.getSessionId();
-        //注册sessionId
+        //userId -> sessionId
         redisService.setAdd(RedisConstant.WS_USER_TO_SESSION_PRE + userId, sessionId);
+        //sessionId -> userId
         redisService.strSet(RedisConstant.WS_SESSION_TO_USER_PRE + sessionId, userId);
     }
 }

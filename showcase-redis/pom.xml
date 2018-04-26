@@ -10,17 +10,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>showcase-websocket</artifactId>
+    <artifactId>showcase-redis</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
+            <groupId>samlen.tsoi</groupId>
+            <artifactId>showcase-common</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>samlen.tsoi</groupId>
-            <artifactId>showcase-redis</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
     </dependencies>
 </project>

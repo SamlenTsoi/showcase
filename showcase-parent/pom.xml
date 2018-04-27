@@ -65,25 +65,31 @@
 
             <dependency>
                 <groupId>samlen.tsoi</groupId>
-                <artifactId>showcase-entity</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>samlen.tsoi</groupId>
-                <artifactId>showcase-service-api</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>samlen.tsoi</groupId>
-                <artifactId>showcase-service</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>samlen.tsoi</groupId>
                 <artifactId>showcase-redis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>samlen.tsoi</groupId>
+                <artifactId>showcase-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>samlen.tsoi</groupId>
+                <artifactId>showcase-websocket</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>samlen.tsoi</groupId>
+                <artifactId>showcase-es</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>samlen.tsoi</groupId>
+                <artifactId>showcase-quartz</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

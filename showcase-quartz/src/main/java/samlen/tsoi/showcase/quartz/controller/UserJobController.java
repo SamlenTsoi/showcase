@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import samlen.tsoi.showcase.entity.dto.JobConfig;
 import samlen.tsoi.showcase.quartz.component.SchedulerHelper;
+import samlen.tsoi.showcase.quartz.entity.dto.JobConfig;
 import samlen.tsoi.showcase.quartz.job.UserJob;
 
 /**

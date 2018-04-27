@@ -4,9 +4,9 @@ import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import samlen.tsoi.showcase.entity.po.User;
-import samlen.tsoi.showcase.service.UserReadService;
-import samlen.tsoi.showcase.service.UserWriteService;
+import samlen.tsoi.showcase.web.entity.po.User;
+import samlen.tsoi.showcase.web.service.UserReadService;
+import samlen.tsoi.showcase.web.service.UserWriteService;
 
 /**
  * @author samlen_tsoi

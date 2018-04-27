@@ -10,10 +10,18 @@
 
     <artifactId>showcase-web</artifactId>
 
+    <properties>
+        <mybatis.generator.generatorConfig.xml>${basedir}/src/main/resources/generator/generatorConfig.xml
+        </mybatis.generator.generatorConfig.xml>
+        <mybatis.generator.generatorConfig.properties>
+            file:///${basedir}/src/main/resources/generator/generatorConfig.properties
+        </mybatis.generator.generatorConfig.properties>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>samlen.tsoi</groupId>
-            <artifactId>showcase-service</artifactId>
+            <artifactId>showcase-common</artifactId>
         </dependency>
 
         <dependency>
@@ -34,6 +42,41 @@
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-autoconfigure</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-autoconfigure</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
         </dependency>
 
         <!-- 热部署 -->

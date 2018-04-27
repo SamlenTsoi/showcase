@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import samlen.tsoi.showcase.entity.dto.JobConfig;
+import samlen.tsoi.showcase.quartz.entity.dto.JobConfig;
 
 /**
  * 任务操作类

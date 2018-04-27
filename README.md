@@ -1,5 +1,5 @@
 # showcase
-基于springboot的web开发demo
+个人积累
 
 ## 热部署开启
 
@@ -26,4 +26,3 @@
     </plugins>
 </build>
 ```
-

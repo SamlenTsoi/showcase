@@ -17,5 +17,6 @@
         <module>showcase-websocket</module>
         <module>showcase-redis</module>
         <module>showcase-es</module>
+        <module>showcase-dubbo</module>
     </modules>
 </project>

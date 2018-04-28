@@ -17,6 +17,4 @@
         <module>showcase-dubbo-consumer</module>
         <module>showcase-dubbo-provider</module>
     </modules>
-
-
 </project>

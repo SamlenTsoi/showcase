@@ -32,8 +32,8 @@ public class SmsDemo {
     static final String domain = "dysmsapi.aliyuncs.com";
 
     // TODO 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)
-    static final String accessKeyId = "yourKeyId";
-    static final String accessKeySecret = "yourKeySecret";
+    static final String accessKeyId = "24539633";
+    static final String accessKeySecret = "aebb11a64af5dbe9b8642d07015a870f";
 
     public static SendSmsResponse sendSms() throws ClientException {
 
@@ -49,11 +49,11 @@ public class SmsDemo {
         //组装请求对象-具体描述见控制台-文档部分内容
         SendSmsRequest request = new SendSmsRequest();
         //必填:待发送手机号
-        request.setPhoneNumbers("1550000000");
+        request.setPhoneNumbers("15521377432");
         //必填:短信签名-可在短信控制台中找到
-        request.setSignName("用户注册验证码");
+        request.setSignName("注册验证码");
         //必填:短信模板-可在短信控制台中找到
-        request.setTemplateCode("SMS_8345757");
+        request.setTemplateCode("SMS_10240066");
         //可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
         request.setTemplateParam("{\"code\":\"123\",\"product\":\"群助手\"}");
 

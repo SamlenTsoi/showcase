@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2018/4/28
  */
 @SpringBootApplication(scanBasePackages = "samlen.tsoi.showcase.dubbo.consumer.controller")
-//@SpringBootApplication
 public class ConsumerApplication {
 
     public static void main(String[] args) {

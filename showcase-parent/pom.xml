@@ -15,6 +15,8 @@
         <jna.version>3.0.9</jna.version>
         <java.version>1.8</java.version>
         <guava.version>21.0</guava.version>
+        <storm.version>1.2.2</storm.version>
+        <kafka.version>1.1.1</kafka.version>
         <mysql.version>5.1.35</mysql.version>
         <quartz.version>2.3.0</quartz.version>
         <mybatis.version>1.3.0</mybatis.version>
@@ -228,6 +230,12 @@
             </dependency>
 
             <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka_2.12</artifactId>
+                <version>${kafka.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.version}</version>
@@ -280,6 +288,20 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger2.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.apache.storm</groupId>
+                <artifactId>storm-core</artifactId>
+                <version>${storm.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.storm</groupId>
+                <artifactId>storm-kafka</artifactId>
+                <version>${storm.version}</version>
+                <scope>provided</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -300,8 +322,8 @@
                 <version>${maven-jar-plugin.version}</version>
                 <configuration>
                     <excludes>
-                        <exclude> **/application.yml/**</exclude>
-                        <exclude> **/application.yml.example/**</exclude>
+                        <exclude>**/application.yml/**</exclude>
+                        <exclude>**/application.yml.example/**</exclude>
                     </excludes>
                 </configuration>
             </plugin>

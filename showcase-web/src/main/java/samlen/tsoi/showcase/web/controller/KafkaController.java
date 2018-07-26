@@ -57,7 +57,7 @@ public class KafkaController {
      *
      * @param record
      */
-    @KafkaListener(topicPattern = "show-web")
+    @KafkaListener(topicPattern = "showcase-web")
     public void listenOne(ConsumerRecord<String, String> record) {
         Optional<String> kafkaMessage = Optional.ofNullable(record.value());
         if (kafkaMessage.isPresent()) {

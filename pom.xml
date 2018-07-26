@@ -18,5 +18,6 @@
         <module>showcase-redis</module>
         <module>showcase-es</module>
         <module>showcase-dubbo</module>
+        <module>showcase-storm</module>
     </modules>
 </project>

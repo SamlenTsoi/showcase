@@ -1,4 +1,4 @@
-package samlen.tsoi.showcase.web.component;
+package samlen.tsoi.showcase.storm.listener;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.storm.Config;
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
-import samlen.tsoi.showcase.web.bolt.KafkaBolt;
+import samlen.tsoi.showcase.storm.bolt.KafkaBolt;
 
 
 /**

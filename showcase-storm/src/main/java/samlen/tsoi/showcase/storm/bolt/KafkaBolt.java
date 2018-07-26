@@ -1,4 +1,4 @@
-package samlen.tsoi.showcase.web.bolt;
+package samlen.tsoi.showcase.storm.bolt;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.storm.task.OutputCollector;
@@ -29,7 +29,7 @@ public class KafkaBolt extends BaseRichBolt {
     @Override
     public void execute(Tuple tuple) {
         String value = tuple.getStringByField("value");
-        log.info("kafka接受到数据:{}",value);
+        log.info("kafka流入数据:{}",value);
         //必须调用此方法，告诉storm该tuple已经被正确处理，否则重复消费该tuple
         outputCollector.ack(tuple);
     }

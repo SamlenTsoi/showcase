@@ -19,3 +19,12 @@ spring:
           key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
           value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
           auto-commit-interval: 100
+
+
+storm:
+  kafkaHost: 127.0.0.1:9092
+  kafkaTopics: storm-kafka
+  mqttHost: tcp://127.0.0.1:1883
+  mqttUsername: admin
+  mqttPassword: public
+  mqttTopics: wx/msgs

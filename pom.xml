@@ -19,5 +19,6 @@
         <module>showcase-es</module>
         <module>showcase-dubbo</module>
         <module>showcase-storm</module>
+        <module>showcase-topology</module>
     </modules>
 </project>

@@ -35,7 +35,9 @@ public class KafkaController {
     @GetMapping("syncKafka")
     public Result syncKafka(@RequestParam("topic") String topic,
                             @RequestParam("mes") String mes) {
-        kafkaTemplate.send(topic, mes);
+        for (int i = 0; i < 10; i++) {
+            kafkaTemplate.send(topic, mes + i);
+        }
         return Result.ok();
     }
 

@@ -1,17 +1,16 @@
 package samlen.tsoi.showcase.storm.listener;
 
+import com.google.common.base.Throwables;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.storm.Config;
-import org.apache.storm.LocalCluster;
+import org.apache.storm.StormSubmitter;
 import org.apache.storm.kafka.spout.KafkaSpout;
-import org.apache.storm.mqtt.spout.MqttSpout;
 import org.apache.storm.topology.TopologyBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 import samlen.tsoi.showcase.storm.bolt.KafkaBolt;
-import samlen.tsoi.showcase.storm.bolt.MqttBolt;
 
 
 /**
@@ -30,28 +29,23 @@ public class StormTopologyListener implements ApplicationListener<ApplicationRea
     @Autowired
     private KafkaSpout kafkaSpout;
 
-    @Autowired
-    private MqttSpout mqttSpout;
-
-    @Autowired
-    private MqttBolt mqttBolt;
-
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         //实例化topologyBuilder类。
         TopologyBuilder kafkaTopologyBuilder = new TopologyBuilder();
-        //设置spout即数据来源
+        //设置spout即数据来源，parallelism_hint数即初始化线程数/实例数，会导致重复读数据，默认为1
         kafkaTopologyBuilder.setSpout("kafka-spout", kafkaSpout, 1).setNumTasks(1);
-        //设置bolt即数据处理
-        kafkaTopologyBuilder.setBolt("kafka-bolt", kafkaBolt, 1).setNumTasks(1).shuffleGrouping("kafka-spout");
+        //设置bolt即数据处理，parallelism_hint数即初始化线程数/实例数，共享数据spout流入数据（不重复），默认为1
+        kafkaTopologyBuilder.setBolt("kafka-bolt", kafkaBolt, 2).shuffleGrouping("kafka-spout");
         Config config = new Config();
         config.setDebug(false);
-        LocalCluster cluster = new LocalCluster();
-        //提交拓扑到storm
-        cluster.submitTopology("kafka-topology", config, kafkaTopologyBuilder.createTopology());
-        TopologyBuilder mqttTopologyBuilder = new TopologyBuilder();
-        mqttTopologyBuilder.setSpout("mqtt-spout", mqttSpout, 1).setNumTasks(1);
-        mqttTopologyBuilder.setBolt("mqtt-bolt", mqttBolt, 1).setNumTasks(1).shuffleGrouping("mqtt-spout");
-        cluster.submitTopology("mqtt-topology", config, mqttTopologyBuilder.createTopology());
+//        LocalCluster cluster = new LocalCluster();
+//        //提交拓扑到storm
+//        cluster.submitTopology("kafka-topology", config, kafkaTopologyBuilder.createTopology());
+        try {
+            StormSubmitter.submitTopology("kafka-topology", config, kafkaTopologyBuilder.createTopology());
+        } catch (Exception e) {
+            log.error(Throwables.getStackTraceAsString(e));
+        }
     }
 }

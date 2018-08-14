@@ -25,6 +25,8 @@ public class KafkaController {
     @Autowired
     private KafkaTemplate kafkaTemplate;
 
+    private Integer count = 0;
+
     /**
      * 同步到kafka
      *
@@ -57,11 +59,15 @@ public class KafkaController {
      *
      * @param record
      */
-    @KafkaListener(topicPattern = "showcase-web")
+    @KafkaListener(topicPattern = "storm-kafka")
     public void listenOne(ConsumerRecord<String, String> record) {
         Optional<String> kafkaMessage = Optional.ofNullable(record.value());
         if (kafkaMessage.isPresent()) {
-            log.info("topic : {}, mes : {}", record.topic(), kafkaMessage.get());
+            String keyword = "关键词";
+            if (kafkaMessage.get().contains(keyword)) {
+                count += 1;
+                log.info("次数:{}", count);
+            }
         }
     }
 }

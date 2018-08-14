@@ -27,4 +27,4 @@ storm:
   mqttHost: tcp://127.0.0.1:1883
   mqttUsername: admin
   mqttPassword: public
-  mqttTopics: wx/msgs
+  mqttTopics: **/**

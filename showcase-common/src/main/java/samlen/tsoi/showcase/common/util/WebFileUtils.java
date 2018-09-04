@@ -20,7 +20,7 @@ import java.util.UUID;
 @Slf4j
 public class WebFileUtils {
 
-    private final static String FILE_PATH = "/tmp/file/";
+    private final static String FILE_PATH = System.getProperty("user.home") + "/data/tmp/";
 
     /**
      * 保存前端传过来的文件到本地

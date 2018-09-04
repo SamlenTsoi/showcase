@@ -89,6 +89,11 @@
             <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-spring-boot-starter</artifactId>
+        </dependency>
+
         <!-- 热部署 -->
         <!--<dependency>-->
             <!--<groupId>org.springframework.boot</groupId>-->

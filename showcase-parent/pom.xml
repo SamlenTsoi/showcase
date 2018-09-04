@@ -26,6 +26,7 @@
         <org.dom4j.version>2.0.0</org.dom4j.version>
         <zookeeper.veriosn>3.4.9</zookeeper.veriosn>
         <commons-io.version>2.6</commons-io.version>
+        <eureka.version>1.3.6.RELEASE</eureka.version>
         <pagehelper.version>5.1.2</pagehelper.version>
         <project.version>1.0-SNAPSHOT</project.version>
         <commons-lang3.version>3.4</commons-lang3.version>
@@ -33,6 +34,7 @@
         <portable.version>portable-1.6.1</portable.version>
         <druid.starter.version>1.1.0</druid.starter.version>
         <persistence-api.version>1.0</persistence-api.version>
+        <easypoi-starter.version>3.2.0</easypoi-starter.version>
         <spring-boot.version>1.5.8.RELEASE</spring-boot.version>
         <pagehelper.auto.version>1.2.3</pagehelper.auto.version>
         <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
@@ -324,6 +326,23 @@
                 <groupId>com.hankcs</groupId>
                 <artifactId>hanlp</artifactId>
                 <version>${portable.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-eureka</artifactId>
+                <version>${eureka.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-spring-boot-starter</artifactId>
+                <version>${easypoi-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.jna</groupId>
+                <artifactId>jna</artifactId>
+                <version>${jna.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

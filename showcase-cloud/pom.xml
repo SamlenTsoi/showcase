@@ -12,7 +12,11 @@
 
     <artifactId>showcase-cloud</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>showcase-cloud-eureka</module>
+        <module>showcase-cloud-feign</module>
+        <module>showcase-cloud-consumer</module>
+        <module>showcase-cloud-provider</module>
     </modules>
 </project>

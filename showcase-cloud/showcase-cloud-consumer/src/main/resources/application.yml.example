@@ -1,0 +1,14 @@
+# 服务配置
+server:
+  port: 9093
+
+# eureka注册中心配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9090/eureka/
+
+# spring配置
+spring:
+  application:
+    name: showcase-consumer

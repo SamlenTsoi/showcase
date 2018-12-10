@@ -2,6 +2,7 @@ package samlen.tsoi.showcase.quartz.configuration;
 
 
 import lombok.extern.slf4j.Slf4j;
+import org.quartz.Trigger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,7 +32,7 @@ public class QuartzConfiguration {
     private SpringJobFactory springJobFactory;
 
     @Bean
-    public SchedulerFactoryBean schedulerFactoryBean() throws IOException {
+    public SchedulerFactoryBean schedulerFactoryBean(Trigger... trigger) throws IOException {
         SchedulerFactoryBean schedulerFactoryBean = new SchedulerFactoryBean();
         //是否覆盖就任务
         schedulerFactoryBean.setOverwriteExistingJobs(true);
@@ -41,6 +42,8 @@ public class QuartzConfiguration {
         schedulerFactoryBean.setQuartzProperties(properties());
         //是否自动启动
         schedulerFactoryBean.setAutoStartup(Boolean.TRUE);
+        //添加时间固定的定时任务
+        schedulerFactoryBean.setTriggers(trigger);
         //必须设置，具体的任务实例才能交给spring管理
         schedulerFactoryBean.setJobFactory(springJobFactory);
         return schedulerFactoryBean;

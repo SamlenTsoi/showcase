@@ -19,7 +19,7 @@ spring:
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
-     kafka:
+    kafka:
         bootstrap-servers: 127.0.0.1:9092
         producer:
           retries: 0

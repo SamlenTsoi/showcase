@@ -21,7 +21,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("kafka")
 public class KafkaController {
-
     @Autowired
     private KafkaTemplate kafkaTemplate;
 

@@ -12,7 +12,6 @@ import org.springframework.integration.mqtt.event.MqttSubscribedEvent;
  */
 @Slf4j
 public class MqttSubscribedListener implements ApplicationListener<MqttSubscribedEvent> {
-
     @Override
     public void onApplicationEvent(MqttSubscribedEvent mqttSubscribedEvent) {
         log.info("MqttSubscribedListener:"+mqttSubscribedEvent.getMessage().toString());

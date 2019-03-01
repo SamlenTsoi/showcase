@@ -14,36 +14,58 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "mqtt")
 public class MqttConfig {
-    /** mqtt地址 **/
+    /**
+     * mqtt地址
+     */
     private String serverURIs;
 
-    /** 用户名 **/
+    /**
+     * 用户名
+     **/
     private String username;
 
-    /** 密码 **/
+    /**
+     * 密码
+     **/
     private String password;
 
-    /** 订阅通道客户端ID **/
+    /**
+     * 订阅通道客户端ID
+     */
     private String subClientId;
 
-    /** 订阅主题名 **/
+    /**
+     * 订阅主题名
+     */
     private String[] subTopic;
 
-    /** 发布通道客户端ID **/
+    /**
+     * 发布通道客户端ID
+     **/
     private String pubClientId;
 
-    /** 发布主题名 **/
+    /**
+     * 发布主题名
+     **/
     private String pubTopic;
 
-    /** MQTT Qos **/
+    /**
+     * MQTT Qos
+     **/
     private Integer qos;
 
-    /** 心跳 **/
+    /**
+     * 心跳
+     **/
     private Integer keepAliveInterval = 15;
 
-    /** 连接超时 **/
+    /**
+     * 连接超时
+     **/
     private Integer connectionTimeout = 10;
 
-    /** 重连 **/
+    /**
+     * 重连
+     **/
     private Integer recoveryInterval = 5000;
 }

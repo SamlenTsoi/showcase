@@ -18,7 +18,6 @@ import samlen.tsoi.showcase.mqtt.config.MqttConfig;
 @Slf4j
 @Configuration
 public class MqttClientFactoryConfiguration {
-
     @Autowired
     private MqttConfig mqttConfig;
 

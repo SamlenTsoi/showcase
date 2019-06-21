@@ -4,13 +4,8 @@ server:
 
 # spring相关配置
 spring:
-    data:
-      # es配置
-      elasticsearch:
-        cluster-nodes: localhost:9300
-        cluster-name:
-        repositories:
-          enabled: true
+    main:
+      allow-bean-definition-overriding: true
     datasource:
         name: test
         url: jdbc:mysql://127.0.0.1:3306/showcase
@@ -18,7 +13,7 @@ spring:
         password: root
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
-        driver-class-name: com.mysql.jdbc.Driver
+        driver-class-name: com.mysql.cj.jdbc.Driver
     kafka:
         bootstrap-servers: 127.0.0.1:9092
         producer:

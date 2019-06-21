@@ -13,7 +13,6 @@ import samlen.tsoi.showcase.quartz.job.QuartzJob;
  * @date 2018/12/10
  */
 @Configuration
-@AutoConfigureBefore(QuartzConfiguration.class)
 public class QuartJobConfiguration {
     @Bean
     public JobDetailFactoryBean quartzJobDetail() {

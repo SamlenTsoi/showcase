@@ -5,7 +5,6 @@ import com.google.common.eventbus.Subscribe;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import samlen.tsoi.showcase.web.entity.dto.EventBusDTO;
 import samlen.tsoi.showcase.web.entity.dto.EventBusSonDTO;
 
 import javax.annotation.PostConstruct;

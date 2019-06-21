@@ -9,8 +9,6 @@ import samlen.tsoi.showcase.cloud.feign.dto.FeignDTO;
 import samlen.tsoi.showcase.cloud.feign.dto.User;
 import samlen.tsoi.showcase.cloud.feign.dto.VipUser;
 
-import java.util.Date;
-
 /**
  * @author samlen_tsoi
  * @date 2018/9/10

@@ -1,5 +1,6 @@
 package samlen.tsoi.showcase.web.subscribe;
 
+import com.google.common.eventbus.AllowConcurrentEvents;
 import com.google.common.eventbus.AsyncEventBus;
 import com.google.common.eventbus.Subscribe;
 import lombok.extern.slf4j.Slf4j;
@@ -25,6 +26,7 @@ public class AsyncEventBusSubscribe {
     }
 
     @Subscribe
+//    @AllowConcurrentEvents
     public void subscribe(AsyncEventBusDTO asyncEventBusDTO) throws InterruptedException {
         log.info("异步eventBus，线程{}睡眠60秒", Thread.currentThread().getId());
         Thread.sleep(60 * 1000);

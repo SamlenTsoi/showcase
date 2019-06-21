@@ -24,6 +24,10 @@
             <groupId>samlen.tsoi</groupId>
             <artifactId>showcase-cloud-feign</artifactId>
         </dependency>
+        <dependency>
+            <groupId>samlen.tsoi</groupId>
+            <artifactId>showcase-common</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

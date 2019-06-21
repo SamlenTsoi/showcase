@@ -4,6 +4,7 @@ import com.google.common.eventbus.AsyncEventBus;
 import com.google.common.eventbus.EventBus;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +19,7 @@ import java.util.concurrent.Executors;
 @Configuration
 @ComponentScan("samlen.tsoi.showcase")
 @MapperScan("samlen.tsoi.showcase.web.dao")
-public class WebConfiguration {
+public class WebConfiguration extends WebMvcAutoConfiguration {
     @Autowired
     private ThreadPoolTaskExecutor executorService;
 
@@ -29,6 +30,6 @@ public class WebConfiguration {
 
     @Bean
     public AsyncEventBus asyncEventBus() {
-        return new AsyncEventBus(Executors.newFixedThreadPool(10));
+        return new AsyncEventBus(executorService);
     }
 }

@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import samlen.tsoi.showcase.web.entity.dto.EventBusDTO;
+import samlen.tsoi.showcase.web.entity.dto.EventBusSonDTO;
 
 import javax.annotation.PostConstruct;
 
@@ -15,7 +16,7 @@ import javax.annotation.PostConstruct;
  */
 @Slf4j
 @Component
-public class EventBusSubscribe {
+public class EventBusSonSubscribe {
     @Autowired
     private EventBus eventBus;
 
@@ -25,9 +26,7 @@ public class EventBusSubscribe {
     }
 
     @Subscribe
-    public void subscribe(EventBusDTO eventBusDTO) throws InterruptedException {
-        log.info("同步eventBus，线程{}睡眠60秒", Thread.currentThread().getId());
-        Thread.sleep(60 * 1000);
-        log.info("同步eventBus，线程{}睡眠结束", Thread.currentThread().getId());
+    public void subscribe(EventBusSonDTO eventBusSonDTO) throws InterruptedException {
+        log.info("son");
     }
  }

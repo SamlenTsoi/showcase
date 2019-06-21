@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import samlen.tsoi.showcase.common.pojo.dto.Result;
 import samlen.tsoi.showcase.web.entity.dto.AsyncEventBusDTO;
 import samlen.tsoi.showcase.web.entity.dto.EventBusDTO;
+import samlen.tsoi.showcase.web.entity.dto.EventBusSonDTO;
 
 /**
  * @author samlen_tsoi
@@ -23,12 +24,15 @@ public class EventBusController {
     @Autowired
     private AsyncEventBus asyncEventBus;
 
-    @GetMapping("sync")
-    public Result sync() {
+    @GetMapping("parent")
+    public Result parent() {
         eventBus.post(new EventBusDTO());
-        eventBus.post(new EventBusDTO());
-        eventBus.post(new EventBusDTO());
-        eventBus.post(new EventBusDTO());
+        return Result.ok();
+    }
+
+    @GetMapping("son")
+    public Result son() {
+        eventBus.post(new EventBusSonDTO());
         return Result.ok();
     }
 
@@ -40,4 +44,15 @@ public class EventBusController {
         asyncEventBus.post(new AsyncEventBusDTO());
         return Result.ok();
     }
+
+    @GetMapping("sync")
+    public Result sync() {
+        eventBus.post(new EventBusDTO());
+        eventBus.post(new EventBusDTO());
+        eventBus.post(new EventBusDTO());
+        eventBus.post(new EventBusDTO());
+        eventBus.post(new EventBusDTO());
+        return Result.ok();
+    }
+
 }

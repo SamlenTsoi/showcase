@@ -6,9 +6,6 @@ import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
 import com.github.pagehelper.PageInfo;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -60,11 +57,6 @@ public class UserController {
      * @param pageSize
      * @return
      */
-    @ApiOperation(value = "分页获取用户", notes = "这是notes")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "pageNum", value = "页码", required = true, dataType = "Integer"),
-            @ApiImplicitParam(name = "pageSize", value = "一页大小", required = true, dataType = "Integer")
-    })
     @GetMapping("page")
     public PageInfo<User> page(@RequestParam("pageNum") Integer pageNum,
                                @RequestParam("pageSize") Integer pageSize) {

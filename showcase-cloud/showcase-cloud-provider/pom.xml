@@ -13,29 +13,38 @@
 
     <dependencies>
         <dependency>
+            <groupId>samlen.tsoi</groupId>
+            <artifactId>showcase-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>samlen.tsoi</groupId>
+            <artifactId>showcase-cloud-feign</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>samlen.tsoi</groupId>
-            <artifactId>showcase-cloud-feign</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>samlen.tsoi</groupId>
-            <artifactId>showcase-common</artifactId>
         </dependency>
     </dependencies>
 </project>

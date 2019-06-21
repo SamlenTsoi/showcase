@@ -2,6 +2,8 @@
 spring:
   application:
     name: ichater-eureka
+  main:
+    allow-bean-definition-overriding: true
 
 ##应用端口
 server:

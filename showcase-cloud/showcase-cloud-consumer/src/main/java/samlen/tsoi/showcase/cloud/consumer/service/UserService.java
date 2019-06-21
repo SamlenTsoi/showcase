@@ -1,6 +1,6 @@
 package samlen.tsoi.showcase.cloud.consumer.service;
 
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import samlen.tsoi.showcase.cloud.feign.api.UserFeignService;
 
 /**

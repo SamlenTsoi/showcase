@@ -1,4 +1,4 @@
-package samlen.tsoi.showcase.websocket.task;
+package samlen.tsoi.showcase.websocket.job;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import samlen.tsoi.showcase.websocket.controller.WebSocketController;
  */
 @Slf4j
 @Component
-public class WebsocketTask {
+public class WebsocketJob {
 
     @Autowired
     private WebSocketController webSocketController;

@@ -27,6 +27,7 @@
         <commons-lang3.version>3.4</commons-lang3.version>
         <mybatis.core.version>1.3.5</mybatis.core.version>
         <portable.version>portable-1.6.1</portable.version>
+        <commons-pool2.version>2.6.2</commons-pool2.version>
         <druid.starter.version>1.1.17</druid.starter.version>
         <persistence-api.version>1.0</persistence-api.version>
         <easypoi-starter.version>4.0.0</easypoi-starter.version>
@@ -210,6 +211,12 @@
             </dependency>
 
             <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
@@ -255,18 +262,6 @@
                 <groupId>com.101tec</groupId>
                 <artifactId>zkclient</artifactId>
                 <version>${zkclient.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger2.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger2.version}</version>
             </dependency>
 
             <dependency>

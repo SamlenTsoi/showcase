@@ -152,7 +152,7 @@ public class WebSocketDisconnectListener implements ApplicationListener<SessionD
 其中`sockjs.min.js`、`stomp.min.js`为关键js，必须存在。连接的时候会传`userId`到服务端用于表示客户端，具体的值可自定义。
 
 # 测试
-浏览器上打开客户端，经测试，本地调试只能用**火狐**，打开调试模式下的控制台,点击确定
+浏览器上打开客户端，经测试，本地调试只能用**火狐/safari**，打开调试模式下的控制台,点击确定
 ![](https://upload-images.jianshu.io/upload_images/3712304-9299d6495d13c74c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 链接成功后，服务端会把userId与sessionId保存到redis，再起个定时器，每10秒推送当前时间到浏览器即客户端。
 `WebsocketTask`：定时任务

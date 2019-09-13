@@ -7,14 +7,14 @@ import org.springframework.integration.mqtt.event.MqttSubscribedEvent;
 /**
  * mqtt订阅成功Listener
  *
- * @author wxw
- * @date 2017-11-22 15:27
+ * @author samlen_tsoi
+ * @date 2019/2/2
  */
 @Slf4j
 public class MqttSubscribedListener implements ApplicationListener<MqttSubscribedEvent> {
 
     @Override
-    public void onApplicationEvent(MqttSubscribedEvent mqttSubscribedEvent) {
-        log.info("MqttSubscribedListener:"+mqttSubscribedEvent.getMessage().toString());
+    public void onApplicationEvent(MqttSubscribedEvent event) {
+        log.info("MqttSubscribedEvent-> {}", event);
     }
 }

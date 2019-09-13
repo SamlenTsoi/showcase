@@ -7,14 +7,14 @@ import org.springframework.integration.mqtt.event.MqttConnectionFailedEvent;
 /**
  * mqtt连接失败Listener
  *
- * @author wxw
- * @date 2017-11-22 15:33
+ * @author samlen_tsoi
+ * @date 2019/2/2
  */
 @Slf4j
 public class MqttConnectionFailedListener implements ApplicationListener<MqttConnectionFailedEvent> {
 
     @Override
-    public void onApplicationEvent(MqttConnectionFailedEvent mqttConnectionFailedEvent) {
-        log.error("MqttConnectionFailed:"+mqttConnectionFailedEvent.getCause());
+    public void onApplicationEvent(MqttConnectionFailedEvent event) {
+        log.error("MqttConnectionFailedEvent-> {}", event);
     }
 }

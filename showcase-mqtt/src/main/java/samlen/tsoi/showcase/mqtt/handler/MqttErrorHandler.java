@@ -13,7 +13,6 @@ import org.springframework.util.ErrorHandler;
 @Slf4j
 @Component
 public class MqttErrorHandler implements ErrorHandler {
-
     @Override
     public void handleError(Throwable throwable) {
         log.error("MqttErrorHandler:"+throwable.getMessage());

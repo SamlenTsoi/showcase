@@ -15,6 +15,7 @@ import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.MessageHandler;
 import org.springframework.util.ErrorHandler;
 import samlen.tsoi.showcase.mqtt.config.MqttConfig;
+import samlen.tsoi.showcase.mqtt.constant.MqttTopicEnum;
 import samlen.tsoi.showcase.mqtt.handler.MqttErrorHandler;
 import samlen.tsoi.showcase.mqtt.handler.TestHandler;
 
@@ -47,7 +48,7 @@ public class MqttConfiguration {
     @Bean
     public MessageProducer wxWillProducer() {
         MqttPahoMessageDrivenChannelAdapter adapter =
-                new MqttPahoMessageDrivenChannelAdapter(MqttTopicEnum.WX_WILL.getClientId(), mqttPahoClientFactory, MqttTopicEnum.WX_WILL.getTopic());
+                new MqttPahoMessageDrivenChannelAdapter(MqttTopicEnum.TEST.getClient(), mqttPahoClientFactory, MqttTopicEnum.TEST.getTopic());
         adapter.setConverter(defaultPahoMessageConverter);
         adapter.setQos(mqttConfig.getQos());
         adapter.setRecoveryInterval(mqttConfig.getRecoveryInterval());

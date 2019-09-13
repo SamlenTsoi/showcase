@@ -1,0 +1,20 @@
+##应用名
+spring:
+  application:
+    name: ichater-eureka
+  main:
+    allow-bean-definition-overriding: true
+
+##应用端口
+server:
+  port: 8181
+
+##eureka配置
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

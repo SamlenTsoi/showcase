@@ -12,7 +12,6 @@ import org.springframework.integration.mqtt.event.MqttConnectionFailedEvent;
  */
 @Slf4j
 public class MqttConnectionFailedListener implements ApplicationListener<MqttConnectionFailedEvent> {
-
     @Override
     public void onApplicationEvent(MqttConnectionFailedEvent event) {
         log.error("MqttConnectionFailedEvent-> {}", event);

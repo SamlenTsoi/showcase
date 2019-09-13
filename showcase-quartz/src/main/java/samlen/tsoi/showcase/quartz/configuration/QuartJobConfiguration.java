@@ -1,7 +1,6 @@
 package samlen.tsoi.showcase.quartz.configuration;
 
 import org.quartz.JobDetail;
-import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
@@ -13,7 +12,6 @@ import samlen.tsoi.showcase.quartz.job.QuartzJob;
  * @date 2018/12/10
  */
 @Configuration
-@AutoConfigureBefore(QuartzConfiguration.class)
 public class QuartJobConfiguration {
     @Bean
     public JobDetailFactoryBean quartzJobDetail() {

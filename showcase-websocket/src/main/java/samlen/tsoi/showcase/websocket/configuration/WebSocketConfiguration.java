@@ -5,9 +5,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
+import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 import org.springframework.web.socket.messaging.StompSubProtocolErrorHandler;
 import samlen.tsoi.showcase.websocket.handler.WebSocketErrorHandler;
 import samlen.tsoi.showcase.websocket.listener.WebSocketDisconnectListener;
@@ -23,7 +23,7 @@ import samlen.tsoi.showcase.websocket.listener.WebsocketConnectListener;
 @Configuration
 @EnableWebSocketMessageBroker
 @ComponentScan("samlen.tsoi.showcase")
-public class WebSocketConfiguration extends AbstractWebSocketMessageBrokerConfigurer {
+public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer {
 
     /**
      * 注册stomp的端点

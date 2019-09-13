@@ -25,6 +25,7 @@ public class AsyncEventBusSubscribe {
     }
 
     @Subscribe
+//    @AllowConcurrentEvents
     public void subscribe(AsyncEventBusDTO asyncEventBusDTO) throws InterruptedException {
         log.info("异步eventBus，线程{}睡眠60秒", Thread.currentThread().getId());
         Thread.sleep(60 * 1000);

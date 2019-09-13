@@ -10,14 +10,10 @@
     <artifactId>showcase-parent</artifactId>
     <packaging>pom</packaging>
 
-
     <properties>
-        <jna.version>3.0.9</jna.version>
         <java.version>1.8</java.version>
         <guava.version>21.0</guava.version>
-        <storm.version>1.2.2</storm.version>
-        <kafka.version>1.1.1</kafka.version>
-        <mysql.version>5.1.35</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
         <quartz.version>2.3.0</quartz.version>
         <mybatis.version>1.3.0</mybatis.version>
         <zkclient.version>0.10</zkclient.version>
@@ -27,27 +23,27 @@
         <zookeeper.veriosn>3.4.9</zookeeper.veriosn>
         <commons-io.version>2.6</commons-io.version>
         <pagehelper.version>5.1.2</pagehelper.version>
+        <eureka.version>1.4.7.RELEASE</eureka.version>
         <project.version>1.0-SNAPSHOT</project.version>
         <commons-lang3.version>3.4</commons-lang3.version>
         <mybatis.core.version>1.3.5</mybatis.core.version>
         <portable.version>portable-1.6.1</portable.version>
-        <druid.starter.version>1.1.0</druid.starter.version>
+        <commons-pool2.version>2.6.2</commons-pool2.version>
+        <druid.starter.version>1.1.17</druid.starter.version>
         <persistence-api.version>1.0</persistence-api.version>
-        <easypoi-starter.version>3.2.0</easypoi-starter.version>
-        <spring-boot.version>1.5.8.RELEASE</spring-boot.version>
+        <easypoi-starter.version>4.0.0</easypoi-starter.version>
+        <spring-boot.version>2.1.4.RELEASE</spring-boot.version>
         <pagehelper.auto.version>1.2.3</pagehelper.auto.version>
         <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
-        <spring-kafka.version>1.2.2.RELEASE</spring-kafka.version>
+        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <org.projectlombok.verson>1.16.20</org.projectlombok.verson>
         <tk.mybatis.mapper.version>3.4.2</tk.mybatis.mapper.version>
         <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
-        <aliyun-java-sdk-core.version>4.0.0</aliyun-java-sdk-core.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
         <org.mybatis.generator.version>1.3.5</org.mybatis.generator.version>
         <tk.mybatis.mapper.auto.version>1.1.5</tk.mybatis.mapper.auto.version>
         <dubbo-spring-boot-starter.vesion>0.1.0</dubbo-spring-boot-starter.vesion>
-        <aliyun-java-sdk-dysmsapi.version>1.1.0</aliyun-java-sdk-dysmsapi.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
@@ -138,9 +134,27 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Dalston.SR5</version>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-eureka-server</artifactId>
+                <version>${eureka.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-eureka</artifactId>
+                <version>${eureka.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-feign</artifactId>
+                <version>${eureka.version}</version>
             </dependency>
 
             <dependency>
@@ -216,15 +230,15 @@
             </dependency>
 
             <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${guava.version}</version>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.sun.jna</groupId>
-                <artifactId>jna</artifactId>
-                <version>${jna.version}</version>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
 
             <dependency>
@@ -240,18 +254,6 @@
             </dependency>
 
             <dependency>
-                <groupId>org.springframework.kafka</groupId>
-                <artifactId>spring-kafka</artifactId>
-                <version>${spring-kafka.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.kafka</groupId>
-                <artifactId>kafka_2.12</artifactId>
-                <version>${kafka.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.version}</version>
@@ -261,18 +263,6 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.aliyun</groupId>
-                <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
-                <version>${aliyun-java-sdk-dysmsapi.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.aliyun</groupId>
-                <artifactId>aliyun-java-sdk-core</artifactId>
-                <version>${aliyun-java-sdk-core.version}</version>
             </dependency>
 
             <dependency>
@@ -294,48 +284,6 @@
             </dependency>
 
             <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger2.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger2.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.storm</groupId>
-                <artifactId>storm-core</artifactId>
-                <version>${storm.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.storm</groupId>
-                <artifactId>storm-kafka</artifactId>
-                <version>${storm.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.storm</groupId>
-                <artifactId>storm-kafka-client</artifactId>
-                <version>${storm.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.storm</groupId>
-                <artifactId>storm-mqtt</artifactId>
-                <version>${storm.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.storm</groupId>
-                <artifactId>storm-jdbc</artifactId>
-                <version>${storm.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>com.hankcs</groupId>
                 <artifactId>hanlp</artifactId>
                 <version>${portable.version}</version>
@@ -346,10 +294,11 @@
                 <artifactId>easypoi-spring-boot-starter</artifactId>
                 <version>${easypoi-starter.version}</version>
             </dependency>
+
             <dependency>
-                <groupId>com.sun.jna</groupId>
-                <artifactId>jna</artifactId>
-                <version>${jna.version}</version>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -16,8 +16,9 @@ import org.springframework.stereotype.Component;
 public class MqttConfig {
     /**
      * mqtt地址
-     **/
-    private String[] serverURIs;
+
+     */
+    private String serverURIs;
 
     /**
      * 用户名
@@ -30,6 +31,26 @@ public class MqttConfig {
     private String password;
 
     /**
+     * 订阅通道客户端ID
+     */
+    private String subClientId;
+
+    /**
+     * 订阅主题名
+     */
+    private String[] subTopic;
+
+    /**
+     * 发布通道客户端ID
+     **/
+    private String pubClientId;
+
+    /**
+     * 发布主题名
+     **/
+    private String pubTopic;
+
+    /**
      * MQTT Qos
      **/
     private Integer qos;
@@ -37,12 +58,12 @@ public class MqttConfig {
     /**
      * 心跳
      **/
-    private Integer keepAliveInterval = 2;
+    private Integer keepAliveInterval = 15;
 
     /**
      * 连接超时
      **/
-    private Integer connectionTimeout = 15;
+    private Integer connectionTimeout = 10;
 
     /**
      * 重连

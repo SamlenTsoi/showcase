@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import samlen.tsoi.showcase.common.pojo.dto.Result;
 import samlen.tsoi.showcase.common.util.WebFileUtils;
+import samlen.tsoi.showcase.web.annotation.UserAnnotation;
 import samlen.tsoi.showcase.web.entity.po.User;
 import samlen.tsoi.showcase.web.service.UserReadService;
 import samlen.tsoi.showcase.web.service.UserWriteService;
@@ -63,6 +64,11 @@ public class UserController {
         return userReadService.page(pageNum, pageSize);
     }
 
+    @GetMapping("get")
+    public Result get(@UserAnnotation User user) {
+        return Result.ok(user);
+    }
+
     /**
      * 导出用户信息Excel
      *
@@ -80,7 +86,7 @@ public class UserController {
         PageInfo<User> page = userReadService.page(1, 20);
         List<User> userList = page.getList();
         //Sheet参数
-        Map<String, Object> sheetMap = new HashMap<String, Object>(3);
+        Map<String, Object> sheetMap = new HashMap<>(3);
         //设置导出参数
         ExportParams params = new ExportParams();
         params.setSheetName("用户信息");

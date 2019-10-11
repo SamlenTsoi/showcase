@@ -64,4 +64,8 @@ public class Result<T> implements Serializable {
     public static <T> Result<T> fail(Code code, String error) {
         return new Result(code.getCode(), error, null);
     }
+
+    public Boolean isOk() {
+        return CommonCode.SUCCESS.getCode().equals(this.code);
+    }
 }

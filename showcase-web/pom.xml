@@ -93,13 +93,6 @@
             <groupId>samlen.tsoi</groupId>
             <artifactId>showcase-redis</artifactId>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring -->
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-spring</artifactId>
-            <version>1.4.1</version>
-        </dependency>
     </dependencies>
 
     <build>

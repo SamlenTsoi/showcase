@@ -21,6 +21,7 @@ import samlen.tsoi.showcase.cloud.feign.dto.User;
 public class UserController implements UserFeignService {
     @Override
     public User get() {
+        log.info("日志");
         User user = new User();
         user.setAge(22);
         user.setName("Samlen_Tsoi");

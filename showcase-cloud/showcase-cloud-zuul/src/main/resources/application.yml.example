@@ -1,0 +1,32 @@
+# 服务配置
+server:
+  port: 9092
+
+# eureka注册中心配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8181/eureka/
+
+# spring配置
+spring:
+  application:
+    name: showcase-zuul
+  main:
+    allow-bean-definition-overriding: true
+
+# zuul
+zuul:
+  routes:
+    provider:
+      path: /provider/**
+      serviceId: showcase-provider
+  # 开启重试机制
+  retryable: true
+
+# ribbon
+ribbon:
+  # 重试次数
+  MaxAutoRetries: 5
+  # 切换服务次数
+  MaxAutoRetriesNextServer: 0

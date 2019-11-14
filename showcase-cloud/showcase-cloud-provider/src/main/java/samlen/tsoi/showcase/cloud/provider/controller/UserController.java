@@ -22,6 +22,11 @@ public class UserController implements UserFeignService {
     @Override
     public User get() {
         log.info("日志");
+        try {
+            Thread.sleep(100 * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         User user = new User();
         user.setAge(22);
         user.setName("Samlen_Tsoi");

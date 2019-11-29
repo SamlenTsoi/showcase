@@ -1,13 +1,14 @@
 package samlen.tsoi.showcase.web.service;
 
-import com.github.pagehelper.PageInfo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.IService;
 import samlen.tsoi.showcase.web.entity.po.User;
 
 /**
  * @author samlen_tsoi
  * @date 2017/12/3
  */
-public interface UserReadService {
+public interface UserReadService extends IService<User> {
 
     /**
      * 分页查询
@@ -15,5 +16,5 @@ public interface UserReadService {
      * @param pageSize
      * @return
      */
-    PageInfo<User> page(Integer pageNo, Integer pageSize);
+    Page<User> page(Integer pageNo, Integer pageSize);
 }

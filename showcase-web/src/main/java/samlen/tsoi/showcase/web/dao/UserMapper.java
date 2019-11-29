@@ -1,7 +1,8 @@
 package samlen.tsoi.showcase.web.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import samlen.tsoi.showcase.web.entity.po.User;
-import tk.mybatis.mapper.common.Mapper;
 
 /**
  * 用户Mapper
@@ -9,5 +10,12 @@ import tk.mybatis.mapper.common.Mapper;
  * @author samlen_tsoi
  * @date 2018/1/20
  */
-public interface UserMapper extends Mapper<User> {
+public interface UserMapper extends BaseMapper<User> {
+    /**
+     * 分页
+     *
+     * @param page
+     * @return
+     */
+    Page<User> selectPage(Page page);
 }

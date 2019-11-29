@@ -5,7 +5,7 @@ import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
-import com.github.pagehelper.PageInfo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -59,8 +59,8 @@ public class UserController {
      * @return
      */
     @GetMapping("page")
-    public PageInfo<User> page(@RequestParam("pageNum") Integer pageNum,
-                               @RequestParam("pageSize") Integer pageSize) {
+    public Page<User> page(@RequestParam("pageNum") Integer pageNum,
+                           @RequestParam("pageSize") Integer pageSize) {
         return userReadService.page(pageNum, pageSize);
     }
 
@@ -83,8 +83,8 @@ public class UserController {
         //下载文件的默认名称
         response.setHeader("Content-Disposition", "attachment;filename*=UTF-8''" + URLEncoder.encode(fileName,"UTF-8") + ".xls");
         //查询用户信息
-        PageInfo<User> page = userReadService.page(1, 20);
-        List<User> userList = page.getList();
+        Page<User> page = userReadService.page(1, 20);
+        List<User> userList = page.getRecords();
         //Sheet参数
         Map<String, Object> sheetMap = new HashMap<>(3);
         //设置导出参数

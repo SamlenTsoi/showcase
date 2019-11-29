@@ -16,7 +16,6 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
  */
 @Configuration
 @ComponentScan("samlen.tsoi.showcase")
-@MapperScan("samlen.tsoi.showcase.web.dao")
 public class WebConfiguration extends WebMvcAutoConfiguration {
     @Autowired
     private ThreadPoolTaskExecutor executorService;

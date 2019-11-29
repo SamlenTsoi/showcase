@@ -1,7 +1,7 @@
 package samlen.tsoi.showcase.web.service.impl;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,14 +15,14 @@ import samlen.tsoi.showcase.web.service.UserReadService;
  */
 @Slf4j
 @Service
-public class UserReadServiceImpl implements UserReadService {
+public class UserReadServiceImpl extends ServiceImpl<UserMapper, User> implements UserReadService {
 
     @Autowired
     private UserMapper userMapper;
 
     @Override
-    public PageInfo<User> page(Integer pageNo, Integer pageSize) {
-        PageHelper.startPage(pageNo, pageSize);
-        return new PageInfo<>(userMapper.selectAll());
+    public Page<User> page(Integer pageNo, Integer pageSize) {
+        Page<User> page = new Page<>(pageNo, pageSize);
+        return userMapper.selectPage(page);
     }
 }

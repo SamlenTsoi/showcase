@@ -48,9 +48,7 @@ public class KafkaController {
     @KafkaListener(topicPattern = "showcase.*")
     public void listenPattern(ConsumerRecord<String, String> record) {
         Optional<String> kafkaMessage = Optional.ofNullable(record.value());
-        if (kafkaMessage.isPresent()) {
-            log.info("topic : {}, mes : {}", record.topic(), kafkaMessage.get());
-        }
+        kafkaMessage.ifPresent(s -> log.info("topic : {}, mes : {}", record.topic(), s));
     }
 
     /**

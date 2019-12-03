@@ -5,6 +5,7 @@ import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DateFormatUtils;
@@ -16,8 +17,7 @@ import samlen.tsoi.showcase.common.pojo.dto.Result;
 import samlen.tsoi.showcase.common.util.WebFileUtils;
 import samlen.tsoi.showcase.web.annotation.UserAnnotation;
 import samlen.tsoi.showcase.web.entity.po.User;
-import samlen.tsoi.showcase.web.service.UserReadService;
-import samlen.tsoi.showcase.web.service.UserWriteService;
+import samlen.tsoi.showcase.web.service.IUserService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
@@ -35,10 +35,7 @@ import java.util.*;
 public class UserController {
 
     @Autowired
-    private UserWriteService userWriteService;
-
-    @Autowired
-    private UserReadService userReadService;
+    private IUserService userService;
 
     @Autowired
     private HttpServletResponse response;
@@ -49,7 +46,7 @@ public class UserController {
      */
     @PostMapping("add")
     public void create(@RequestBody User user) {
-        userWriteService.insertOne(user);
+        userService.save(user);
     }
 
     /**
@@ -59,9 +56,9 @@ public class UserController {
      * @return
      */
     @GetMapping("page")
-    public Page<User> page(@RequestParam("pageNum") Integer pageNum,
-                           @RequestParam("pageSize") Integer pageSize) {
-        return userReadService.page(pageNum, pageSize);
+    public IPage<User> page(@RequestParam("pageNum") Integer pageNum,
+                            @RequestParam("pageSize") Integer pageSize) {
+        return userService.page(new Page<>(pageNum, pageSize));
     }
 
     @GetMapping("get")
@@ -83,7 +80,7 @@ public class UserController {
         //下载文件的默认名称
         response.setHeader("Content-Disposition", "attachment;filename*=UTF-8''" + URLEncoder.encode(fileName,"UTF-8") + ".xls");
         //查询用户信息
-        Page<User> page = userReadService.page(1, 20);
+        IPage<User> page = userService.page(new Page<>(1, 20));
         List<User> userList = page.getRecords();
         //Sheet参数
         Map<String, Object> sheetMap = new HashMap<>(3);

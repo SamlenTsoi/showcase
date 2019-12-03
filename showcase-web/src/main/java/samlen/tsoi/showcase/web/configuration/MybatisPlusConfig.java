@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  **/
 @Configuration
 @EnableTransactionManagement
-@MapperScan("samlen.tsoi.showcase.web.dao")
+@MapperScan("samlen.tsoi.showcase.web.mapper")
 public class MybatisPlusConfig {
     @Bean
     public PaginationInterceptor paginationInterceptor() {

@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="samlen.tsoi.showcase.web.dao.UserMapper">
-  <resultMap id="BaseResultMap" type="samlen.tsoi.showcase.web.entity.po.User">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
-    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
-  </resultMap>
+<mapper namespace="samlen.tsoi.showcase.web.mapper.UserMapper">
 
-  <select id="selectPage" resultMap="BaseResultMap">
-    SELECT * FROM user
-  </select>
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="samlen.tsoi.showcase.web.entity.po.User">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="email" property="email" />
+        <result column="mobile" property="mobile" />
+        <result column="password" property="password" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, email, mobile, password, created_at, updated_at
+    </sql>
+
 </mapper>

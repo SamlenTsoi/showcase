@@ -12,5 +12,4 @@ import samlen.tsoi.showcase.web.entity.po.User;
  * @since 2019-12-03
  */
 public interface UserMapper extends BaseMapper<User> {
-
 }

@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "name": "test",
+      "type": "samlen.tsoi.showcase.web.configuration.TestProperties",
+      "sourceType": "samlen.tsoi.showcase.web.configuration.TestProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "test.age",
+      "type": "java.lang.Integer",
+      "sourceType": "samlen.tsoi.showcase.web.configuration.TestProperties",
+      "defaultValue": 0,
+      "description": "年龄"
+    },
+    {
+      "name": "test.name",
+      "type": "java.lang.String",
+      "sourceType": "samlen.tsoi.showcase.web.configuration.TestProperties"
+    }
+  ],
+  "hints": []
+}

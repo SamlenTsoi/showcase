@@ -27,3 +27,4 @@ dependency-reduced-pom.xml
 *.rdb
 log/
 application.yml
+logback-spring.xml

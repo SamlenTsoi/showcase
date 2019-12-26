@@ -2,9 +2,14 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
-    pool:
-      max-idle: 50
-      min-idle: 10
-      max-active: 100
-      max-wait: 5000
+    lettuce:
+      pool:
+        max-idle: 50
+        min-idle: 10
+        max-active: 100
+        max-wait: 5000
     timeout: 10000
+    # 哨兵模式配置
+#    sentinel:
+#      nodes: 127.0.0.1:26379,127.0.0.1:26380,127.0.0.1:26381
+#      master: mymaster

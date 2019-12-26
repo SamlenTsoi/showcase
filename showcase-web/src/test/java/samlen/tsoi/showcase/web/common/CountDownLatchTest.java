@@ -1,8 +1,10 @@
-package samlen.tsoi.showcase.web;
+package samlen.tsoi.showcase.web.common;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -12,9 +14,10 @@ import java.util.concurrent.TimeUnit;
  **/
 @Slf4j
 public class CountDownLatchTest {
-    public static void main(String[] args) throws InterruptedException {
+    @Test
+    public void await() throws InterruptedException {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(10, 10, 10000, TimeUnit.MILLISECONDS, new ArrayBlockingQueue(10));
-        java.util.concurrent.CountDownLatch countDownLatch = new java.util.concurrent.CountDownLatch(10);
+        CountDownLatch countDownLatch = new CountDownLatch(10);
         for (int i = 0; i < 10; i++) {
             threadPoolExecutor.execute(new Runnable() {
                 @Override

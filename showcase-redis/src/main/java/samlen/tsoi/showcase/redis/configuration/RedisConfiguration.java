@@ -31,7 +31,7 @@ public class RedisConfiguration {
     @ConditionalOnMissingBean(name = "redisTemplate")
     public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         RedisTemplate<Object, Object> template = new RedisTemplate<>();
-        //使用fastjson序列化
+        // 使用fastjson序列化，必须自己实现，这使用阿里的会无法反序列化成对象
         FastJsonRedisSerializer fastJsonRedisSerializer = new FastJsonRedisSerializer(Object.class);
         // value值的序列化采用fastJsonRedisSerializer
         template.setValueSerializer(fastJsonRedisSerializer);
@@ -47,7 +47,7 @@ public class RedisConfiguration {
     @ConditionalOnMissingBean(name = "stringRedisTemplate")
     public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
         StringRedisTemplate template = new StringRedisTemplate();
-        //使用fastjson序列化
+        // 使用fastjson序列化，必须自己实现，这使用阿里的会无法反序列化成对象
         FastJsonRedisSerializer fastJsonRedisSerializer = new FastJsonRedisSerializer(Object.class);
         // value值的序列化采用fastJsonRedisSerializer
         template.setValueSerializer(fastJsonRedisSerializer);
@@ -63,7 +63,11 @@ public class RedisConfiguration {
     public RedisCacheManager cacheManager(RedisConnectionFactory factory) {
         FastJsonRedisSerializer<Object> fastJsonRedisSerializer = new FastJsonRedisSerializer<>(Object.class);
         RedisCacheConfiguration configuration = RedisCacheConfiguration.defaultCacheConfig();
-        configuration = configuration.serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(fastJsonRedisSerializer)).entryTtl(Duration.ofDays(30));
+        configuration = configuration
+                // 序列化
+                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(fastJsonRedisSerializer))
+                // 有效时间，默认不失效
+                .entryTtl(Duration.ofDays(30));
         RedisCacheManager cacheManager = RedisCacheManager.builder(factory)
                 .cacheDefaults(configuration)
                 .build();

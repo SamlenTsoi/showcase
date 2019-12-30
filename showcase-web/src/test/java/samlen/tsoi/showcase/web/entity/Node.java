@@ -8,11 +8,8 @@ import lombok.Data;
  **/
 @Data
 public class Node {
-    private String data;
 
-    private Node next;
+    private int age;
 
-    public Node(String data) {
-        this.data = data;
-    }
+    private String name;
 }

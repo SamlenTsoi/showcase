@@ -7,5 +7,8 @@ import lombok.Data;
  * @date 2019/12/26
  **/
 @Data
-public class Parent {
+public class Parent<T> {
+    private String name;
+
+    private T son;
 }

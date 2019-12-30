@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
 import samlen.tsoi.showcase.redis.BaseTest;
 import samlen.tsoi.showcase.redis.entity.RedisDTO;
 
@@ -12,6 +14,7 @@ import samlen.tsoi.showcase.redis.entity.RedisDTO;
  * @date 2018/4/26
  */
 @Slf4j
+@EnableCaching
 public class RedisServiceTest extends BaseTest {
 
     @Autowired
@@ -34,5 +37,15 @@ public class RedisServiceTest extends BaseTest {
     public void getObject() {
         RedisDTO redisDTO = redisService.hashGet("redis", "dto", RedisDTO.class);
         log.info("redisDTO -> {}", JSON.toJSONString(redisDTO));
+    }
+
+    @Test
+    public void getCache() {
+        log.info(cache());
+    }
+
+    @Cacheable(key = "redis", value = "auto")
+    public String cache() {
+        return "cache";
     }
 }

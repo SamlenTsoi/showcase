@@ -13,11 +13,11 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import samlen.tsoi.showcase.common.pojo.dto.Result;
 import samlen.tsoi.showcase.common.util.WebFileUtils;
 import samlen.tsoi.showcase.web.annotation.UserAnnotation;
 import samlen.tsoi.showcase.web.entity.po.User;
 import samlen.tsoi.showcase.web.service.IUserService;
+import samlent.tsoi.showcase.core.dto.Result;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;

@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import samlen.tsoi.showcase.common.pojo.dto.Result;
 import samlen.tsoi.showcase.es.entity.po.User;
 import samlen.tsoi.showcase.es.entity.vo.UserQuery;
 import samlen.tsoi.showcase.es.service.UserService;
+import samlent.tsoi.showcase.core.dto.Result;
 
 import java.util.List;
 

@@ -12,6 +12,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>samlen.tsoi</groupId>
+            <artifactId>showcase-core</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.dom4j</groupId>
             <artifactId>dom4j</artifactId>
         </dependency>

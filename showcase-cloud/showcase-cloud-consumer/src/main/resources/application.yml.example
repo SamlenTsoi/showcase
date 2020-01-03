@@ -12,3 +12,10 @@ eureka:
 spring:
   application:
     name: showcase-consumer
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/showcase
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource

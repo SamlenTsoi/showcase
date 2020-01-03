@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import samlen.tsoi.showcase.common.pojo.dto.Result;
 import samlen.tsoi.showcase.web.service.ISyncService;
+import samlent.tsoi.showcase.core.dto.Result;
 
 /**
  * @author samlen_tsoi

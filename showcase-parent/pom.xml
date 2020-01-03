@@ -67,6 +67,12 @@
         <dependencies>
             <dependency>
                 <groupId>samlen.tsoi</groupId>
+                <artifactId>showcase-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>samlen.tsoi</groupId>
                 <artifactId>showcase-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -283,12 +289,6 @@
                 <groupId>com.101tec</groupId>
                 <artifactId>zkclient</artifactId>
                 <version>${zkclient.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.hankcs</groupId>
-                <artifactId>hanlp</artifactId>
-                <version>${portable.version}</version>
             </dependency>
 
             <dependency>

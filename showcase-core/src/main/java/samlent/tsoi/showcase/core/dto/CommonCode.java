@@ -1,4 +1,4 @@
-package samlen.tsoi.showcase.common.pojo.dto;
+package samlent.tsoi.showcase.core.dto;
 
 import lombok.AllArgsConstructor;
 

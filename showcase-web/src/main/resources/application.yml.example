@@ -67,3 +67,7 @@ logging:
 test:
   age: 26
   name: samlen
+
+# 是否开启shiro
+shiro:
+  enable: true

@@ -24,7 +24,6 @@ import java.time.Duration;
  */
 @Configuration
 @EnableCaching
-@SuppressWarnings("unchecked")
 public class RedisConfiguration {
 
     @Bean(name = "redisTemplate")

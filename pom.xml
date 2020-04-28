@@ -19,5 +19,6 @@
         <module>showcase-es</module>
         <module>showcase-dubbo</module>
         <module>showcase-cloud</module>
+        <module>showcase-shiro</module>
     </modules>
 </project>

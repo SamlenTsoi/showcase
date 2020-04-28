@@ -2,10 +2,15 @@
 server:
   port: 9002
 
+
 # spring相关配置
 spring:
     main:
       allow-bean-definition-overriding: true
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password:
     datasource:
         name: test
         url: jdbc:mysql://127.0.0.1:3306/showcase
@@ -67,3 +72,7 @@ spring:
 test:
   age: 26
   name: samlen
+
+# 是否开启shiro
+shiro:
+  enable: true

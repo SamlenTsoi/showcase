@@ -10,6 +10,10 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -41,6 +45,18 @@ public class UserController {
     private HttpServletResponse response;
 
     /**
+     * 登录
+     *
+     * @param username
+     * @param password
+     */
+    @PostMapping("login")
+    public void login(@RequestParam("username") String username,
+                      @RequestParam("password") String password) {
+        SecurityUtils.getSubject().login(new UsernamePasswordToken(username, password));
+    }
+
+    /**
      * 创建
      * @param user
      */
@@ -62,6 +78,7 @@ public class UserController {
     }
 
     @GetMapping("get")
+    @RequiresPermissions("user:get")
     public Result get(@UserAnnotation User user) {
         return Result.ok(user);
     }

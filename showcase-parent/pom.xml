@@ -21,7 +21,7 @@
         <fastjson.version>1.2.46</fastjson.version>
         <org.dom4j.version>2.0.0</org.dom4j.version>
         <zookeeper.veriosn>3.4.9</zookeeper.veriosn>
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
         <pagehelper.version>5.1.2</pagehelper.version>
         <eureka.version>1.4.7.RELEASE</eureka.version>
         <project.version>1.0-SNAPSHOT</project.version>
